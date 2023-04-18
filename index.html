@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Auto Shop Finder</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <main role='main'>
+      <div class="js-background background">
+        <div class='user-input'>
+          <section role='region'>
+            <h1 role="banner">DIGIVAHAN MECHANIC</h1>
+            <p>Search for Automotive Mechanics in Your Area or Any Selected Area!</p>
+            <button type="submit" class="js-location-near-me">📍 Share Live Location</button>
+            <button type="submit" class="js-location-anywhere anywhere-button">Search any location</button>
+            <div id="userForm" aria-live="assertive"></div>
+          </section>
+        </div>
+      </div>
+
+      <p id="copyright"></p>
+      <div id="map" aria-live="assertive"></div>
+      <div class="js-weather-list" aria-live="assertive"></div>
+      <div class="shop-info"><h2 class="js-scroll" id="scroll">Scroll Down For Shop List</h2>
+        <ul class="js-list-items" aria-live="assertive"></ul>
+      </div>
+      <div class="js-error error" aria-live="assertive"></div>
+      <div id="failure" aria-live="assertive"></div>
+      <div class="try-again">
+        <button class="js-fail-button fail-button"  style="font-family: 'Google Sans', sans-serif;">Try Again</button>
+      </div>
+      <div class="search-again">
+        <button class="js-back back-button"  style="font-family: 'Google Sans', sans-serif;">Search Again</button>
+      </div>
+      <style>
+        #waiting-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.5;
+          animation: wait 3s linear;
+        }
+        
+        @keyframes wait {
+          0% {
+            opacity: 0.5;
+          }
+          33% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0;
+            display: none;
+          }
+        }
+      </style>
+      
+      <div class="js-waiting-icon">
+        <img id="waiting-icon" src="loading.svg"/>
+      </div>
+            </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBskJAbt6y3jJ-cb4IuRumlwCh-NafTn5A&libraries=places&callback=initMap" async defer></script> 
+  </body>
+</html>
